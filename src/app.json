@@ -1,0 +1,20 @@
+{
+  "pages": [
+    {
+      "path": "pages/index",
+      "config": {
+        "navigationBarTitleText": "y"
+      }
+    },
+    "pages/counter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-tag": "/vant-weapp/dist/tag/index"
+  }
+}
