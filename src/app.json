@@ -1,18 +1,22 @@
 {
   "pages": [
+    "pages/homePage",
+    "pages/mine",
+    "pages/statistics",
+    "pages/counter",
     {
       "path": "pages/index",
       "config": {
         "navigationBarTitleText": "y"
       }
-    },
-    "pages/counter"
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#1D1D26",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white",
+    "backgroundColor":"#1D1D26"
   },
   "usingComponents": {
     "van-tag": "/vant-weapp/dist/tag/index"

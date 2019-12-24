@@ -69,26 +69,49 @@ export default {
     bindViewTap() {
     },
     getUserInfo() {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: res => {
-              this.userInfo = res.userInfo;
-            }
-          });
+      wx.getSetting({
+        success(res) {
+          if (res.authSetting['scope.userInfo']) {
+            wx.getUserInfo({
+              success: function(res) {
+                console.log(res.userInfo)
+                //用户已经授权过
+                console.log('用户已经授权过')
+              }
+            })
+          }else{
+            console.log('用户还未授权过')
+          }
         }
       });
+      // 调用登录接口
+      // wx.login({
+      //   success: () => {
+      //     wx.getUserInfo({
+      //       success: (res) => {
+      //         console.log(res);
+              
+      //         this.userInfo = res.userInfo;
+      //         console.log(this.userInfo);
+              
+      //       }
+      //     });
+      //   }
+      // },);
     },
     clickHandle(msg, ev) {
       // eslint-disable-next-line
       console.log("clickHandle:", msg, ev);
     }
   },
-
   created() {
     // 调用应用实例的方法获取全局数据
     this.getUserInfo();
+    // this.$proxy.get('BookBorrow/getalluser')
+    // .then((res) =>{
+    //   console.log(res);
+      
+    // })
   }
 };
 </script>

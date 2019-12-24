@@ -1,32 +1,31 @@
 <template>
   <div class="counter-warp">
-    <p>Vuex counter：{{ count }}</p>
+    <bar-graph></bar-graph>
+    <!-- <p>Vuex counter：{{ count }}</p>
     <p>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
-    </p>
+    </p> -->
 
-    <a href="/pages/index" class="home">去往首页</a>
+    <!-- <a href="/pages/index" class="home">去往首页</a> -->
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
-
+import { mapState, mapMutations } from "vuex";
+import BarGraph from "@/components/BarGraph.vue";
 export default {
+  components: {
+    BarGraph
+  },
   computed: {
-    ...mapState([
-      'count'
-    ])
+    ...mapState(["count"])
   },
 
   methods: {
-    ...mapMutations([
-      'increment',
-      'decrement'
-    ])
+    ...mapMutations(["increment", "decrement"])
   }
-}
+};
 </script>
 
 <style>
